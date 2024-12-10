@@ -94,31 +94,20 @@
                 <p>Data User</p>
               </router-link>
             </li>
-
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-folder"></i>
-                <p>
-                  Data Master
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <router-link to="/app/dataperusahaan" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Perusahaan</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/app/dataclient" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Client</p>
-                  </router-link>
-                </li>
-              </ul>
-            </li>
-          </ul>
+  <router-link to="/app/dataperusahaan" class="nav-link">
+    <i class="fas fa-building nav-icon"></i> <!-- Ikon untuk perusahaan -->
+    <p>Data Perusahaan</p>
+  </router-link>
+</li>
+<li class="nav-item">
+  <router-link to="/app/dataclient" class="nav-link">
+    <i class="fas fa-user-tie nav-icon"></i> <!-- Ikon untuk klien -->
+    <p>Data Client</p>
+  </router-link>
+</li>
+
+    </ul>
         </nav>
       </div>
     </aside>
@@ -155,6 +144,9 @@ export default {
   data() {
     return {
       isAdminOrSuperadmin: false, // Periksa peran admin atau superadmin
+      dropdowns: {
+        dataMaster: false,
+      },
       profile: {
         name: "",
         email: "",
@@ -174,8 +166,13 @@ export default {
     console.log("User role from localStorage:", userRole); // Debug log
     this.isAdminOrSuperadmin =
       userRole === "admin" || userRole === "superadmin";
+      
   },
   methods: {
+    toggleDropdown(menu) {
+    console.log('Dropdown toggled for:', menu);
+    this.dropdowns[menu] = !this.dropdowns[menu];
+  },
     async fetchProfileData() {
       try {
         const token = localStorage.getItem("token");
@@ -258,6 +255,10 @@ export default {
 
 
 <style scoped>
+.nav-treeview {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
 img.profile-photo {
   width: 50px; /* Sesuaikan lebar */
   height: 50px; /* Sesuaikan tinggi */
@@ -321,6 +322,10 @@ body, html {
   height: 100%;
   margin: 0;
   overflow: hidden; /* Menyembunyikan scroll di seluruh halaman */
+}
+.nav-treeview {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Jika diperlukan, tambahkan gaya tambahan di sini untuk menyamakan tampilan dengan menu lainnya */
