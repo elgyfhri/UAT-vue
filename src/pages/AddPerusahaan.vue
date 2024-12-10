@@ -188,7 +188,7 @@ export default {
     }
 
     axios
-      .post("http://127.0.0.1:8000/perusahaan", formData)
+      .post("http://pklwikrama1.4vmapps.com/perusahaan", formData)
       .then((response) => {
         Swal.fire({
           title: "Success!",

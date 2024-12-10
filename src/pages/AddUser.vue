@@ -139,7 +139,7 @@ export default {
     async saveData() {
       try {
         // Kirim data ke server
-        const response = await axios.post('http://127.0.0.1:8000/add-user', this.user, {
+        const response = await axios.post('http://pklwikrama1.4vmapps.com/add-user', this.user, {
           headers: {
             'Content-Type': 'application/json'
           }

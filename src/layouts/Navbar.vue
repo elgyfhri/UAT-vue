@@ -165,7 +165,7 @@ export default {
   computed: {
     userImage() {
       return this.profile.profile_image
-        ? `http://127.0.0.1:8000/${this.profile.profile_image}`
+        ? `http://pklwikrama1.4vmapps.com/${this.profile.profile_image}`
         : "/public/asset/dist/img/default-avatar.png"; // Gambar avatar orang default
     },
   },
@@ -184,7 +184,7 @@ export default {
         }
 
         const response = await axios.get(
-          "http://127.0.0.1:8000/users/profile",
+          "http://pklwikrama1.4vmapps.com/users/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -197,7 +197,7 @@ export default {
 
         if (this.profile.profile_image) {
           console.log(`Profile image path: ${this.profile.profile_image}`);
-          this.profile.photoUrl = `http://127.0.0.1:8000/${this.profile.profile_image}`;
+          this.profile.photoUrl = `http://pklwikrama1.4vmapps.com/${this.profile.profile_image}`;
         }
 
         if (this.profile.is_active === 0) {
@@ -232,7 +232,7 @@ export default {
     async handleLogout() {
       try {
         await axios.post(
-          "http://127.0.0.1:8000/logout",
+          "http://pklwikrama1.4vmapps.com/logout",
           {},
           {
             headers: {

@@ -48,7 +48,7 @@ export default {
   methods: {
     loadClient() {
   const id = this.$route.params.id;
-  axios.get(`http://127.0.0.1:8000/clients/${id}`)
+  axios.get(`http://pklwikrama1.4vmapps.com/clients/${id}`)
     .then(({ data }) => {
       this.client = data;
       console.log("Logo URL:", this.client.logo); // Log to check logo URL
@@ -56,7 +56,7 @@ export default {
       // Check if logo exists and is a string before using startsWith
       this.client.logoUrl = this.client.logo && typeof this.client.logo === 'string' && this.client.logo.startsWith('http')
         ? this.client.logo
-        : `http://127.0.0.1:8000/storage/${this.client.logo}`;
+        : `http://pklwikrama1.4vmapps.com/storage/${this.client.logo}`;
     })
     .catch(error => {
       console.error('There was an error!', error);

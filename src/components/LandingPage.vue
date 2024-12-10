@@ -125,7 +125,7 @@
   },
  methods: {
   fetchEditPageData() {
-    axios.get('http://127.0.0.1:8000/edit-page')
+    axios.get('http://pklwikrama1.4vmapps.com/edit-page')
       .then(({ data }) => {
         this.editPage = { ...data };
         // Set titles and texts for section2

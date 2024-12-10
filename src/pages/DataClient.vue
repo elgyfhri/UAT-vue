@@ -126,7 +126,7 @@ export default {
       }
     });
       axios
-        .get("http://127.0.0.1:8000/clients")
+        .get("http://pklwikrama1.4vmapps.com/clients")
         .then(({ data }) => {
           this.clients = data;
           Swal.close(); // Menutup loading setelah data dimuat
@@ -155,7 +155,7 @@ export default {
     },
     deleteClient(id) {
       axios
-        .delete(`http://127.0.0.1:8000/clients/${id}`)
+        .delete(`http://pklwikrama1.4vmapps.com/clients/${id}`)
         .then(() => {
           this.clients = this.clients.filter((client) => client.id !== id);
           Swal.fire("Dihapus!", "Data client berhasil dihapus.", "success");

@@ -129,7 +129,7 @@ export default {
       }
     });
       axios
-        .get("http://127.0.0.1:8000/perusahaan")
+        .get("http://pklwikrama1.4vmapps.com/perusahaan")
         .then(({ data }) => {
           this.result = data;
           Swal.close(); // Menutup loading setelah data dimuat
@@ -158,7 +158,7 @@ export default {
     },
     deletePerusahaan(id) {
       axios
-        .delete(`http://127.0.0.1:8000/perusahaan/${id}`)
+        .delete(`http://pklwikrama1.4vmapps.com/perusahaan/${id}`)
         .then(() => {
           this.result = this.result.filter((perusahaan) => perusahaan.id !== id);
           Swal.fire("Dihapus!", "Data perusahaan berhasil dihapus.", "success");

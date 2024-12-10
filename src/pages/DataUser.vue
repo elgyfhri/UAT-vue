@@ -170,7 +170,7 @@ export default {
       });
 
       axios
-        .get("http://127.0.0.1:8000/users")
+        .get("http://pklwikrama1.4vmapps.com/users")
         .then(({ data }) => {
           this.result = data;
           Swal.close();
@@ -198,7 +198,7 @@ export default {
     },
     deleteUser(id) {
       axios
-        .delete(`http://127.0.0.1:8000/users/${id}`)
+        .delete(`http://pklwikrama1.4vmapps.com/users/${id}`)
         .then(() => {
           this.result = this.result.filter((user) => user.id !== id);
           Swal.fire("Dihapus!", "Data pengguna berhasil dihapus.", "success");

@@ -542,7 +542,7 @@ updateProgressPercentage() {
 
   try {
     const response = await axios.get(
-      `http://127.0.0.1:8000/uats/${this.$route.params.id}`
+      `http://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`
     );
     this.form = response.data;
 
@@ -573,10 +573,10 @@ updateProgressPercentage() {
 },
 
     loadClientsAndPerusahaans() {
-      axios.get("http://127.0.0.1:8000/clients").then((response) => {
+      axios.get("http://pklwikrama1.4vmapps.com/clients").then((response) => {
         this.clients = response.data;
       });
-      axios.get("http://127.0.0.1:8000/perusahaan").then((response) => {
+      axios.get("http://pklwikrama1.4vmapps.com/perusahaan").then((response) => {
         this.perusahaans = response.data;
       });
     },
@@ -855,7 +855,7 @@ countCheckedRows() {
   try {
     // Mengirimkan data dengan method PUT (update)
     await axios.put(
-      `http://127.0.0.1:8000/uats/${this.$route.params.id}`,
+      `http://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`,
       dataToSend
     );
 

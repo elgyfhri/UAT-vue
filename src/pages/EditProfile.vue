@@ -66,13 +66,13 @@ export default {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('Token not found');
 
-        const response = await axios.get('http://127.0.0.1:8000/users/profile', {
+        const response = await axios.get('http://pklwikrama1.4vmapps.com/users/profile', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
 
         this.profile = response.data;
         if (this.profile.profile_image) {
-          this.previewPhoto = `http://127.0.0.1:8000/${this.profile.profile_image}`;
+          this.previewPhoto = `http://pklwikrama1.4vmapps.com/${this.profile.profile_image}`;
         }
       } catch (error) {
         console.error('Failed to fetch profile data:', error);
@@ -107,7 +107,7 @@ export default {
           profile_image: this.removePhotoFlag ? null : (this.photoFile ? await this.convertFileToBase64(this.photoFile) : this.profile.profile_image),
         };
 
-        await axios.put('http://127.0.0.1:8000/users/profile', payload, {
+        await axios.put('http://pklwikrama1.4vmapps.com/users/profile', payload, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

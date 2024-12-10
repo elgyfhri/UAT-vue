@@ -555,7 +555,7 @@ doc.line(signXRight, lineYRight, signXRight + 40, lineYRight); // Garis horizont
     });
 
     const uatId = this.$route.params.id;
-    const { data } = await axios.get(`http://127.0.0.1:8000/uats/${uatId}`);
+    const { data } = await axios.get(`http://pklwikrama1.4vmapps.com/uats/${uatId}`);
 
     // Proses pages dan sections untuk memastikan gambar dapat diakses
     data.pages.forEach((page) => {
@@ -585,7 +585,7 @@ doc.line(signXRight, lineYRight, signXRight + 40, lineYRight); // Garis horizont
     async loadCompanyName(perusahaanId) {
       try {
         const { data } = await axios.get(
-          `http://127.0.0.1:8000/perusahaan/${perusahaanId}`
+          `http://pklwikrama1.4vmapps.com/perusahaan/${perusahaanId}`
         );
         this.uat.perusahaan_name = data.name;
       } catch (error) {
@@ -595,7 +595,7 @@ doc.line(signXRight, lineYRight, signXRight + 40, lineYRight); // Garis horizont
     async loadClientName(clientId) {
       try {
         const { data } = await axios.get(
-          `http://127.0.0.1:8000/clients/${clientId}`
+          `http://pklwikrama1.4vmapps.com/clients/${clientId}`
         );
         this.uat.client_name = data.name;
       } catch (error) {

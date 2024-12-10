@@ -87,7 +87,7 @@ export default {
           }
         });
 
-        const response = await axios.get("http://127.0.0.1:8000/dashboard-data");
+        const response = await axios.get("http://pklwikrama1.4vmapps.com/dashboard-data");
         this.totalPerusahaan = response.data.total_perusahaan;
         this.totalClient = response.data.total_client;
 
@@ -111,7 +111,7 @@ export default {
           }
         });
 
-        const response = await axios.get("http://127.0.0.1:8000/uat-data");
+        const response = await axios.get("http://pklwikrama1.4vmapps.com/uat-data");
         const uatCountByMonth = {};
 
         // Mengelompokkan data UAT berdasarkan bulan dan tahun

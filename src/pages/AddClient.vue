@@ -73,7 +73,7 @@ export default {
       this.$refs.fileInput.click();
     },
     submitClient() {
-      axios.post('http://127.0.0.1:8000/clients', {
+      axios.post('http://pklwikrama1.4vmapps.com/clients', {
         name: this.client.name,
         short_name: this.client.short_name,
         address: this.client.address,

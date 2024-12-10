@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     saveData() {
-      axios.post("http://127.0.0.1:8000/register", this.user)
+      axios.post("http://pklwikrama1.4vmapps.com/register", this.user)
         .then(({ data }) => {
           if (data.userId) {
             this.userId = data.userId;
@@ -116,7 +116,7 @@ export default {
       }, 5000);
     },
     checkApprovalStatus(userId, interval) {
-      axios.get(`http://127.0.0.1:8000/check-approval/${userId}`)
+      axios.get(`http://pklwikrama1.4vmapps.com/check-approval/${userId}`)
         .then(({ data }) => {
           if (data.approved) {
             clearInterval(interval);

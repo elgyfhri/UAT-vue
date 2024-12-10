@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     fetchUsers() {
-      axios.get("http://127.0.0.1:8000/users", {
+      axios.get("http://pklwikrama1.4vmapps.com/users", {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
       .then(response => {
@@ -114,7 +114,7 @@ export default {
       this.currentUserRole = userRole || '';
     },
     suspendUser(userId) {
-      axios.patch(`http://127.0.0.1:8000/users/${userId}/suspend`, {}, {
+      axios.patch(`http://pklwikrama1.4vmapps.com/users/${userId}/suspend`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
       .then(() => {
@@ -127,7 +127,7 @@ export default {
       });
     },
     activateUser(userId) {
-      axios.patch(`http://127.0.0.1:8000/users/${userId}/activate`, {}, {
+      axios.patch(`http://pklwikrama1.4vmapps.com/users/${userId}/activate`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
       .then(() => {

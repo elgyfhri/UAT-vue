@@ -184,7 +184,7 @@ export default {
       });
       // Mengambil data dari API
       axios
-        .get("http://127.0.0.1:8000/uats")
+        .get("http://pklwikrama1.4vmapps.com/uats")
         .then(({ data }) => {
           this.result = data;
           Swal.close(); // Menutup loading setelah data dimuat
@@ -213,7 +213,7 @@ export default {
     },
     deleteUat(id) {
       axios
-        .delete(`http://127.0.0.1:8000/uats/${id}`)
+        .delete(`http://pklwikrama1.4vmapps.com/uats/${id}`)
         .then(() => {
           this.result = this.result.filter((uat) => uat.id !== id);
           Swal.fire("Dihapus!", "Data UAT berhasil dihapus.", "success");
