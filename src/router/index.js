@@ -11,7 +11,7 @@ import Profile from '../pages/Profile.vue';
 import EditPerusahaan from '../pages/EditPerusahaan.vue';
 import PerusahaanDetail from '../pages/PerusahaanDetail.vue';
 import AddPerusahaan from '../pages/AddPerusahaan.vue';
-import EditProfile from '../pages/Editprofile.vue';
+import EditProfile from '../pages/EditProfile.vue';
 import AddUAT from '../pages/AddUAT.vue';
 import DataUser from '../pages/DataUser.vue';
 import EditUser from '../pages/EditUser.vue';
