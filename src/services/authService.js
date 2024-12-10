@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Pastikan baseURL adalah URL server Laravel
-axios.defaults.baseURL = 'http://pklwikrama1.4vmapps.com/';
+axios.defaults.baseURL = 'https://pklwikrama1.4vmapps.com/';
 
 export async function logout() {
     try {

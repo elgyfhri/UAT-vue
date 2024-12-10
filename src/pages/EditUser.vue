@@ -108,12 +108,12 @@ export default {
         }
       });
 
-      axios.get(`http://pklwikrama1.4vmapps.com/users/${id}`)
+      axios.get(`https://pklwikrama1.4vmapps.com/users/${id}`)
         .then(({ data }) => {
           this.user = data;
           this.originalData = { ...data }; // Menyimpan data asli untuk perbandingan
           if (this.user.profile_image) {
-            this.previewImage = `http://pklwikrama1.4vmapps.com/${this.user.profile_image}`;
+            this.previewImage = `https://pklwikrama1.4vmapps.com/${this.user.profile_image}`;
           }
         })
         .catch(error => {
@@ -161,7 +161,7 @@ export default {
       }
     },
     sendUpdateRequest(updatedFields) {
-  axios.put(`http://pklwikrama1.4vmapps.com/users/${this.$route.params.id}`, updatedFields)
+  axios.put(`https://pklwikrama1.4vmapps.com/users/${this.$route.params.id}`, updatedFields)
     .then(response => {
       // Tampilkan sweetalert2 jika update berhasil
       Swal.fire({

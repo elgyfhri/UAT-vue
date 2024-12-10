@@ -998,7 +998,7 @@ updateProgress() {
 
   // Mengirim data ke server
   axios
-    .post("http://pklwikrama1.4vmapps.com/uats", formDataWithProgress)
+    .post("https://pklwikrama1.4vmapps.com/uats", formDataWithProgress)
     .then((response) => {
       console.log("Data berhasil dikirim:", response.data);
       Swal.fire({
@@ -1051,7 +1051,7 @@ updateProgress() {
 
     async fetchClients() {
       try {
-        const response = await axios.get("http://pklwikrama1.4vmapps.com/clients");
+        const response = await axios.get("https://pklwikrama1.4vmapps.com/clients");
         this.clients = response.data;
       } catch (error) {
         console.error("Gagal mengambil data client:", error);
@@ -1059,7 +1059,7 @@ updateProgress() {
     },
     async fetchPerusahaans() {
       try {
-        const response = await axios.get("http://pklwikrama1.4vmapps.com/perusahaan");
+        const response = await axios.get("https://pklwikrama1.4vmapps.com/perusahaan");
         this.perusahaans = response.data;
       } catch (error) {
         console.error("Gagal mengambil data perusahaan:", error);

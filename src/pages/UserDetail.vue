@@ -56,7 +56,7 @@ export default {
           throw new Error('Token not found');
         }
 
-        const response = await axios.get(`http://pklwikrama1.4vmapps.com/users/${userId}`, {
+        const response = await axios.get(`https://pklwikrama1.4vmapps.com/users/${userId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -67,7 +67,7 @@ export default {
         // Construct the full URL for the user image
 
         this.user.photoUrl = this.user.profile_image 
-          ? `http://pklwikrama1.4vmapps.com/${this.user.profile_image}`
+          ? `https://pklwikrama1.4vmapps.com/${this.user.profile_image}`
           : '/public/asset/dist/img/default-avatar.png';
       } catch (error) {
         console.error('Failed to fetch user data:', error);

@@ -75,13 +75,13 @@
       methods: {
         loadPerusahaan() {
           const id = this.$route.params.id;
-          axios.get(`http://pklwikrama1.4vmapps.com/perusahaan/${id}`)
+          axios.get(`https://pklwikrama1.4vmapps.com/perusahaan/${id}`)
             .then(({ data }) => {
               this.perusahaan = data;
               this.perusahaan.logoUrl = this.perusahaan.logo 
                 ? this.perusahaan.logo.startsWith('http')
                   ? this.perusahaan.logo 
-                  : `http://pklwikrama1.4vmapps.com/storage/${this.perusahaan.logo}`
+                  : `https://pklwikrama1.4vmapps.com/storage/${this.perusahaan.logo}`
                 : null;
             })
             .catch(error => {

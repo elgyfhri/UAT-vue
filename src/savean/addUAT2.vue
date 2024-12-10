@@ -370,7 +370,7 @@ async loadUATData() {
 
   try {
     const response = await axios.get(
-      `http://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`
+      `https://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`
     );
     this.form = response.data;
     if (this.form.pages && this.form.pages.length > 0) {
@@ -420,10 +420,10 @@ async loadUATData() {
 
 
     loadClientsAndPerusahaans() {
-      axios.get("http://pklwikrama1.4vmapps.com/clients").then((response) => {
+      axios.get("https://pklwikrama1.4vmapps.com/clients").then((response) => {
         this.clients = response.data;
       });
-      axios.get("http://pklwikrama1.4vmapps.com/perusahaan").then((response) => {
+      axios.get("https://pklwikrama1.4vmapps.com/perusahaan").then((response) => {
         this.perusahaans = response.data;
       });
     },
@@ -575,7 +575,7 @@ countCheckedRows() {
 
     // Kirim data ke server
     await axios.put(
-      `http://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`,
+      `https://pklwikrama1.4vmapps.com/uats/${this.$route.params.id}`,
       dataToSend
     );
 

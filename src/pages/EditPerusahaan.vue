@@ -95,7 +95,7 @@ export default {
   methods: {
     loadPerusahaan() {
       const id = this.$route.params.id;
-      axios.get(`http://pklwikrama1.4vmapps.com/perusahaan/${id}`)
+      axios.get(`https://pklwikrama1.4vmapps.com/perusahaan/${id}`)
         .then(({ data }) => {
           this.perusahaan = data;
           const [prefix1, prefix2, month, year] = data.config_document.split('/');
@@ -104,7 +104,7 @@ export default {
           this.currentMonth = month || this.currentMonth;
           this.currentYear = year || this.currentYear;
 
-          this.imagePreview = data.logo ? `http://pklwikrama1.4vmapps.com/storage/${data.logo}` : null;
+          this.imagePreview = data.logo ? `https://pklwikrama1.4vmapps.com/storage/${data.logo}` : null;
         })
         .catch(error => {
           console.error('Error loading data!', error);
@@ -158,7 +158,7 @@ export default {
         const reader = new FileReader();
         reader.onloadend = () => {
           formData.logo = reader.result; // Base64 encoded image
-          axios.put(`http://pklwikrama1.4vmapps.com/perusahaan/${this.$route.params.id}`, formData, {
+          axios.put(`https://pklwikrama1.4vmapps.com/perusahaan/${this.$route.params.id}`, formData, {
             headers: {
               'Content-Type': 'application/json'
             }
@@ -174,7 +174,7 @@ export default {
         };
         reader.readAsDataURL(this.perusahaan.logo);
       } else {
-        axios.put(`http://pklwikrama1.4vmapps.com/perusahaan/${this.$route.params.id}`, formData, {
+        axios.put(`https://pklwikrama1.4vmapps.com/perusahaan/${this.$route.params.id}`, formData, {
           headers: {
             'Content-Type': 'application/json'
           }

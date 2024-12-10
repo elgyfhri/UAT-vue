@@ -125,7 +125,7 @@
   },
  methods: {
   fetchEditPageData() {
-    axios.get('http://pklwikrama1.4vmapps.com/edit-page')
+    axios.get('https://pklwikrama1.4vmapps.com/edit-page')
       .then(({ data }) => {
         this.editPage = { ...data };
         // Set titles and texts for section2

@@ -77,7 +77,7 @@ export default {
           throw new Error('Token not found');
         }
 
-        const response = await axios.get('http://pklwikrama1.4vmapps.com/users/profile', {
+        const response = await axios.get('https://pklwikrama1.4vmapps.com/users/profile', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -87,7 +87,7 @@ export default {
 
         // Mengatur foto profil atau gambar default jika tidak ada
         this.profile.photoUrl = this.profile.profile_image 
-          ? `http://pklwikrama1.4vmapps.com/${this.profile.profile_image}` 
+          ? `https://pklwikrama1.4vmapps.com/${this.profile.profile_image}` 
           : '/public/asset/dist/img/default-avatar.png';
 
         // Setelah data berhasil di-fetch, tutup loading
@@ -104,7 +104,7 @@ export default {
     },
     async handleLogout() {
       try {
-        await axios.post('http://pklwikrama1.4vmapps.com/logout', {}, {
+        await axios.post('https://pklwikrama1.4vmapps.com/logout', {}, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }

@@ -86,10 +86,10 @@ export default {
     },
     getClientData() {
       const clientId = this.$route.params.id;
-      axios.get(`http://pklwikrama1.4vmapps.com/clients/${clientId}`)
+      axios.get(`https://pklwikrama1.4vmapps.com/clients/${clientId}`)
         .then(response => {
           this.client = response.data;
-          this.client.logoUrl = this.client.logo.startsWith('http') ? this.client.logo : `http://pklwikrama1.4vmapps.com/storage/${this.client.logo}`;
+          this.client.logoUrl = this.client.logo.startsWith('http') ? this.client.logo : `https://pklwikrama1.4vmapps.com/storage/${this.client.logo}`;
           this.imagePreview = null; // Hapus preview jika data diambil dari server
         })
         .catch(error => {
@@ -114,7 +114,7 @@ export default {
         const reader = new FileReader();
         reader.onloadend = () => {
           formData.logo = reader.result; // Base64 encoded image
-          axios.put(`http://pklwikrama1.4vmapps.com/clients/${this.$route.params.id}`, formData, {
+          axios.put(`https://pklwikrama1.4vmapps.com/clients/${this.$route.params.id}`, formData, {
             headers: {
               'Content-Type': 'application/json'
             }
@@ -130,7 +130,7 @@ export default {
         };
         reader.readAsDataURL(this.client.logo);
       } else {
-        axios.put(`http://pklwikrama1.4vmapps.com/clients/${this.$route.params.id}`, formData, {
+        axios.put(`https://pklwikrama1.4vmapps.com/clients/${this.$route.params.id}`, formData, {
           headers: {
             'Content-Type': 'application/json'
           }

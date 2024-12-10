@@ -81,7 +81,7 @@
   },
 
   fetchPageData() {
-    axios.get('http://pklwikrama1.4vmapps.com/api/edit-page')
+    axios.get('https://pklwikrama1.4vmapps.com/api/edit-page')
       .then(response => {
         const data = response.data;
         Object.assign(this.form, data);
@@ -113,7 +113,7 @@
 
     // Send the data to the server using Axios
     axios
-      .put('http://pklwikrama1.4vmapps.com/api/edit-page', payload)
+      .put('https://pklwikrama1.4vmapps.com/api/edit-page', payload)
       .then(response => {
         alert('Page updated successfully');
       })
